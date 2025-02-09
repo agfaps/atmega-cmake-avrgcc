@@ -6,6 +6,7 @@ project(atmega-gpio)
 
 # Add your source files here
 set(SOURCE_FILES src/main.c)
+set(AVRDUDE_COM_PORT COM8)
 
 # Add an executable target (This will create a .elf file)
 add_executable(${PROJECT_NAME}.elf ${SOURCE_FILES})
@@ -26,13 +27,13 @@ add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
 
 # Add a detect chip target using avrdude
 add_custom_target(detect
-    COMMAND avrdude -v -p m328p -carduino -P COM8 -b115200
+    COMMAND avrdude -v -p m328p -carduino -P ${AVRDUDE_COM_PORT} -b115200
     COMMENT "Detecting the chip type via avrdude"
 )
 
 # Add a flash target using avrdude
 add_custom_target(flash
-    COMMAND avrdude -v -patmega328p -carduino -P COM8 -b115200 -D -Uflash:w:${PROJECT_NAME}.hex:i
+    COMMAND avrdude -v -patmega328p -carduino -P ${AVRDUDE_COM_PORT} -b115200 -D -Uflash:w:${PROJECT_NAME}.hex:i
     DEPENDS ${PROJECT_NAME}.hex
     COMMENT "Flashing ${PROJECT_NAME}.hex to ATmega328P"
 )

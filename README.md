@@ -1,4 +1,4 @@
-# ATmega Project
+# ATmega VSCode Project Template
 
 This project demonstrates simple project configuration for ATmega328P in an arduino board.
 It include simple built-in LED blinking example using VSCode, avr-gcc, avrdude, and built-in arduino bootloader.
@@ -35,11 +35,22 @@ make c_cpp_properties.json file look like this for windows environment:
 
 ## CMake Setup
 
+Change COM port name in CMakeLists.txt in your OS.
+
+```sh
+set(AVRDUDE_COM_PORT COM8)
+set(AVRDUDE_COM_PORT /dev/ttyUSB0)
+```
+
+Run setup script.
+
 ```sh
 sh setup_cmake.sh
 ```
 
 ## Build and flash
+
+Compile, detect chip type, and flash.
 
 ```sh
 make all
