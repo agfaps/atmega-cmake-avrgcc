@@ -12,6 +12,7 @@ C/C++: Edit Configurations (UI)/(JSON)
 
 make c_cpp_properties.json file look like this for windows environment:
 
+```json
 {
     "configurations": [
         {
@@ -30,18 +31,21 @@ make c_cpp_properties.json file look like this for windows environment:
     ],
     "version": 4
 }
+```
 
 ## CMake Setup
 
-mkdir build
-cd build
-cmake -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=cmake/avr-gcc-toolchain.cmake ..
+```sh
+sh setup_cmake.sh
+```
 
 ## Build and flash
 
+```sh
 make all
 make detect
 make flash
+```
 
 ## License
 
