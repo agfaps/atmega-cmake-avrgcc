@@ -15,8 +15,10 @@ set(HEX_OUTPUT ${PROJECT_NAME}.hex)
 
 # Specify additional tools for converting .elf to .hex and getting sizes
 add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
-    COMMAND ${AVR_GCC_PATH}/bin/avr-objcopy -O ihex -R .eeprom ${PROJECT_NAME}.elf ${HEX_OUTPUT}
-    COMMAND ${AVR_GCC_PATH}/bin/avr-size ${PROJECT_NAME}.elf)
+    COMMAND avr-objcopy -O ihex -R .eeprom ${PROJECT_NAME}.elf ${HEX_OUTPUT}
+    COMMAND avr-size ${PROJECT_NAME}.elf)
+    # COMMAND ${AVR_GCC_PATH}/bin/avr-objcopy -O ihex -R .eeprom ${PROJECT_NAME}.elf ${HEX_OUTPUT}
+    # COMMAND ${AVR_GCC_PATH}/bin/avr-size ${PROJECT_NAME}.elf)
 
 # # Optionally, you can add a clean-up command to remove the .elf file after converting to .hex
 # add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD

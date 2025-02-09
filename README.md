@@ -17,12 +17,12 @@ make c_cpp_properties.json file look like this for windows environment:
         {
             "name": "AVR",
             "includePath": [
-                "C:/Users/Legion/scoop/apps/avr-gcc/14.1.0/avr/include",
-                "C:/Users/Legion/scoop/apps/avr-gcc/14.1.0/bin/../lib/gcc/avr/14.1.0/include"
+                "C:/Users/${USER}/scoop/apps/avr-gcc/14.1.0/avr/include",
+                "C:/Users/${USER}/scoop/apps/avr-gcc/14.1.0/bin/../lib/gcc/avr/14.1.0/include"
             ],
             "defines": ["__AVR_ATmega328P__"],
             "windowsSdkVersion": "10.0.22621.0",
-            "compilerPath": "C:/Users/Legion/scoop/apps/avr-gcc/14.1.0/bin/avr-gcc.exe",
+            "compilerPath": "C:/Users/${USER}/scoop/apps/avr-gcc/14.1.0/bin/avr-gcc.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "linux-gcc-x64"
