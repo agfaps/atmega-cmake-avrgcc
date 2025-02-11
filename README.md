@@ -3,6 +3,10 @@
 This project demonstrates simple project configuration for ATmega328P in an arduino board.
 It include simple built-in LED blinking example using VSCode, avr-gcc, avrdude, and built-in arduino bootloader.
 
+<p align="center">
+  <img src="images/arduino-uno-clone.png" alt="Arduino board">
+</p>
+
 ## Generate .vscode setting file
 
 To enable proper intellisense in VSCode, we need to setup .vscode settings.
