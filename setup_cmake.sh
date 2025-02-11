@@ -5,11 +5,12 @@ echo "Checking basic tools..."
 
 # Function to check if a command exists
 check_command() {
-    if ! command -v "$1" &> /dev/null; then
+    cmd_path=$(command -v "$1")
+    if [ -z "$cmd_path" ]; then
         echo "❌ $1 is not installed."
         missing_tools=true
     else
-        echo "✅ $1 is installed: $(command -v "$1")"
+        echo "✅ $1 is installed: $cmd_path"
     fi
 }
 
