@@ -15,7 +15,7 @@ void built_in_led_set(bool state)
 {
     if (state == true)
     {
-        BUILT_IN_LED_PORT = (1 << BUILT_IN_LED_PIN);
+        BUILT_IN_LED_PORT |= (1 << BUILT_IN_LED_PIN);
     }
     else
     {
