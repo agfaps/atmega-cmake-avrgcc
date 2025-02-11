@@ -4,7 +4,7 @@
 
 #define BUILT_IN_LED_DDR        (DDRB)
 #define BUILT_IN_LED_PORT       (PORTB)
-#define BUILT_IN_LED_PIN        (5)
+#define BUILT_IN_LED_PIN        (PINB5)
 
 void built_in_led_init(void)
 {
