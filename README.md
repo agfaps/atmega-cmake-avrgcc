@@ -188,6 +188,18 @@ make all
 ./run_tests(.exe)
 ```
 
+### GoogleTest
+
+Steps to build GoogleTest test (from `${workspaceFolder}`):
+```sh
+cd test/googletest
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ..
+make all
+./run_tests(.exe)
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENCE) file for details.
