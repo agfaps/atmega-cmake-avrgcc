@@ -1,6 +1,6 @@
 #include "mylib.h"
 
-uint32_t add(uint32_t a, uint32_t b)
+int32_t add(int32_t a, int32_t b)
 {
     return (a + b);
 }
