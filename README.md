@@ -102,7 +102,7 @@ Now `.vscode/c_cpp_properties.json` file will look like this(Windows):
 
 NOTE: `avr-gcc` version used at the time is `14.1.0`, yours can vary.
 
-## CMake Setup
+## AVR CMake Setup
 
 Change COM port name in CMakeLists.txt in your OS.
 
@@ -125,6 +125,32 @@ Compile, detect chip type, and flash.
 make all
 make detect
 make flash
+```
+
+## Building Unit Tests
+
+### Unity
+
+Steps to build Unity test (from `${workspaceFolder}`):
+```sh
+cd test/unity
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ..
+make all
+./run_tests(.exe)
+```
+
+### CppUTest
+
+Steps to build CppUTest test (from `${workspaceFolder}`):
+```sh
+cd test/cpputest
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ..
+make all
+./run_tests(.exe)
 ```
 
 ## License
