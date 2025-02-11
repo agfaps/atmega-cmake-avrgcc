@@ -7,6 +7,37 @@ It include simple built-in LED blinking example using VSCode, avr-gcc, avrdude, 
   <img src="images/arduino-uno-clone.png" alt="Arduino board">
 </p>
 
+## Required Tools
+
+At minimum, we need `gcc, avr-gcc, make, cmake, and avrdude` installed.
+
+### Windows
+
+For Windows, you can use `choco` (Administrator required) to install `make, cmake, and avrdude`.
+To install `avr-gcc` you can use `scoop` package manager.
+
+`choco`:
+```sh
+choco install make cmake avrdude
+```
+
+If you want to install `gcc` using `choco`, tha package name is `mingw`.
+
+`scoop`:
+```sh
+scoop install avr-gcc gcc
+```
+
+### Ubuntu
+
+```sh
+sudo apt install make cmake avrdude gcc-avr build-essential -y
+```
+
+### MacOS
+
+Not tested yet.
+
 ## Generate .vscode setting file
 
 To enable proper intellisense in VSCode, we need to setup .vscode settings.
