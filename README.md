@@ -1,5 +1,7 @@
 # ATmega avr-gcc Project Template
 
+[![Build Status](https://github.com/agfaps/atmega-cmake-avrgcc/actions/workflows/avr-ci.yml/badge.svg)](https://github.com/agfaps/atmega-cmake-avrgcc/actions/workflows/avr-ci.yml)
+
 This project demonstrates simple project configuration for ATmega328P in an arduino board.  
 It include simple built-in LED blinking example using avr-gcc, cmake, make, avrdude, and built-in arduino bootloader.
 

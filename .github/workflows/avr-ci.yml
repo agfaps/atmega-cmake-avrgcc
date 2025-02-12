@@ -1,0 +1,63 @@
+name: AVR Continous Integration
+
+on:
+  push:
+    branches:
+      - feat/*
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setting up AVR toolchains
+        run: |
+          sudo apt-get update
+          sudo apt-get install gcc-avr avr-libc avrdude make cmake -y
+      
+      - name: Build firmware
+        run: |
+          sh setup_cmake.sh
+          cd build
+          make all
+      
+      - name: Run CppUTest Unit Test
+        run: |
+          cd $GITHUB_WORKSPACE/test/cpputest
+          mkdir build
+          cd build
+          cmake -G "Unix Makefiles" ..
+          make all
+          ./run_tests
+
+      - name: Run Catch2 Unit Test
+        run: |
+          cd $GITHUB_WORKSPACE/test/catch2
+          mkdir build
+          cd build
+          cmake -G "Unix Makefiles" ..
+          make all
+          ./run_tests
+
+      - name: Run GoogleTest Unit Test
+        run: |
+          cd $GITHUB_WORKSPACE/test/googletest
+          mkdir build
+          cd build
+          cmake -G "Unix Makefiles" ..
+          make all
+          ./run_tests
+
+      - name: Run Unity Unit Test
+        run: |
+          cd $GITHUB_WORKSPACE/test/unity
+          mkdir build
+          cd build
+          cmake -G "Unix Makefiles" ..
+          make all
+          ./run_tests
