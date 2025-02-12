@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkoutV3
+      - uses: actions/checkout@v4
 
       - name: Setting up AVR toolchains
         run: |
