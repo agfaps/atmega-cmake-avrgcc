@@ -38,6 +38,7 @@ sudo apt install make cmake avrdude gcc-avr build-essential -y
 
 Not tested yet.
 
+Check additional [documentation](docs/VSCodeSetup.md) when needing information such as setting up an IDE, etc.
 
 
 ## AVR CMake Setup
@@ -96,6 +97,18 @@ make all
 Steps to build GoogleTest test (from `${workspaceFolder}`):
 ```sh
 cd test/googletest
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ..
+make all
+./run_tests(.exe)
+```
+
+### Catch2
+
+Steps to build Catch2 test (from `${workspaceFolder}`):
+```sh
+cd test/catch2
 mkdir build
 cd build
 cmake -G "Unix Makefiles" ..
