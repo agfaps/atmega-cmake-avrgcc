@@ -6,6 +6,8 @@ To enable proper IntelliSense in VSCode, we need to setup C/C++ Configuration se
 Since we have avr-gcc for AVR project and gcc for CppUTest-Unity-GoogleTest, we need to create two C/C++ Configuration settings.  
 We can switch between settings by clicking in bottom right corner (Switching between AVR-Atmega and Host-Unit-Test) so IntelliSense do not report error information.
 
+C/C++ Configuration for AVR-ATmega:
+
 1. Hold `Ctrl+Shift+P`
 2. Choose C/C++: Edit Configurations (UI)
 3. Give Configuration name: AVR-ATmega
@@ -23,7 +25,7 @@ We can switch between settings by clicking in bottom right corner (Switching bet
 9. C standard: c17
 10. C++ standard: c++17
 
-Profile for CppUTest:
+C/C++ Configuration for Host-Unit-Test:
 
 1. Hold `Ctrl+Shift+P`
 2. Choose C/C++: Edit Configurations (UI)
@@ -73,7 +75,8 @@ Now `.vscode/c_cpp_properties.json` file will look like this(Windows):
                 "${workspaceFolder}/test/cpputest/include/CppUTest",
                 "${workspaceFolder}/test/cpputest/include/CppUTestExt",
                 "${workspaceFolder}/test/googletest/include",
-                "${workspaceFolder}/test/unity/unity"
+                "${workspaceFolder}/test/unity/unity",
+                "${workspaceFolder}/test/catch2/src"
             ],
             "defines": [
                 "CPPUTEST_USE_OWN_CONFIGURATION"
