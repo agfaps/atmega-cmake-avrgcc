@@ -118,6 +118,24 @@ make all
 ./run_tests(.exe)
 ```
 
+## Dockerfile
+
+If you just want to use docker image and do not want to install the required tools (at least having docker desktop installed and running),  
+you can just build the image locally.
+
+Here are the steps:  
+Execute from root repo  
+
+`docker build -t avr-firmware -f docker/Dockerfile .`
+
+After docker image has been created, to build avr firmware (Windows, mingw):  
+
+`docker run --rm -v "$(pwd -W):/project" avr-firmware build`
+
+Ubuntu(not tested):
+
+`docker run --rm -v "$(pwd):/project" avr-firmware build`
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENCE) file for details.
